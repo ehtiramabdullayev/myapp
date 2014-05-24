@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Django Login Application |
+        {% block title %}{% endblock %}</title>
+
+ {% load staticfiles %}
+
+<script src={% static "js/jquery.min.js" %}></script>
+<script src={% static "js/jquery-ui.custom.js" %}></script>
+<script src={% static "js/jquery.dataTables.min.js" %}></script>
+<link rel="stylesheet" type="text/css" href={% static "css/base.css" %}>
+<link rel="stylesheet" type="text/css" href={% static "css/jquery-ui.custom.css" %}>
+<link rel="stylesheet" type="text/css" href={% static "css/jquery.dataTables.min.css" %}>
+    </head>
+
+
+
+    <body>
+        <h1>{% block head %}{% endblock %}</h1>
+        {% block content %}{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="container" style="width:800px; margin:0 auto;">
+<table id="mytable" style="margin:20px 0px 20px 0px;">
+<thead>
+<tr><th>One</th><th>Two</th><th>Three</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>2</td><td>31</td></tr>
+<tr><td>11</td><td>22</td><td>32</td></tr>
+<tr><td>12</td><td>23</td><td>33</td></tr>
+<tr><td>13</td><td>24</td><td>34</td></tr>
+<tr><td>14</td><td>22</td><td>35</td></tr>
+<tr><td>11</td><td>22</td><td>36</td></tr>
+<tr><td>12</td><td>22</td><td>37</td></tr>
+<tr><td>13</td><td>22</td><td>38</td></tr>
+<tr><td>14</td><td>22</td><td>39</td></tr>
+<tr><td>11</td><td>22</td><td>40</td></tr>
+<tr><td>11</td><td>29</td><td>41</td></tr>
+<tr><td>1</td><td>22</td><td>42</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+<script>
+$(function() {
+      $('#mytable').dataTable( {
+   });
+});
+</script>
+ 
+    </body>
+</html>

@@ -1,0 +1,249 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>Рабочее место бригадира</title>
+	{% load staticfiles %}
+	<script src={% static "js/jquery-1.8.0.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.core.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.widget.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.tabs.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.button.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.dialog.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.position.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.selectgroup.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.datepicker.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.mouse.js" %}></script>
+	<script src={% static "js/ui/jquery.ui.slider.js" %}></script>
+	<script src={% static "js/i18n/jquery.ui.datepicker-ru.js" %}></script>
+	<script src={% static "js/i18n/grid.locale-en.js" %}></script>
+	<script src={% static "js/jquery.jqGrid.min.js" %}></script>
+	<script src={% static "js/jquery.searchFilter.js" %}></script>
+	<script src={% static "js/tl/main.js" %}></script>
+	<script src={% static "js/tl/desktop.js" %}></script>
+	<script src={% static "js/tl/placement.js" %}></script>
+	<script src={% static "js/tl/implementcont.js" %}></script>
+	<script src={% static "js/tl/qualitycont.js" %}></script>
+	<script src={% static "js/tl/reward.js" %}></script>
+	<script src={% static "js/tl/personaldata.js" %}></script>
+	<script src={% static "js/fileuploader.js" %}></script>
+	<script src={% static "js/jquery.timers.js" %}></script>
+	<link rel="stylesheet" type="text/css" href={% static "css/base.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/ui-lightness/jquery-ui-1.8.23.custom.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/ui.jqgrid.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/jquery.ui.datepicker.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/searchFilter.css" %}>
+
+</head>
+
+
+<body>
+
+
+<div id="wrapper">
+<div id="tabs">
+
+	<ul>
+		<li><a href="#tabs-1"><img src={% static "img/desktop.jpg" %}><br />Рабочий стол<br /><br /></a></li>
+		<li><a href="#tabs-2"><img src={% static "img/placement.jpg" %}><br />Распределение<br />работ</a></li>
+		<li><a href="#tabs-3"><img src={% static "img/implementcont.jpg" %}><br />Контроль<br />выполнения</a></li>
+		<li><a href="#tabs-4"><img src={% static "img/reward.jpg" %}><br />Вознаграж-<br />дение<br /></a></li>
+		<li><a href="#tabs-5"><img src={% static "img/personaldata.jpg" %}><br />Личные<br />данные</a></li>
+	</ul>
+<div id="tabs-1">
+	<div class="workzone">
+		<div class="leftzone">
+		<h1>Рабочий стол</h1>
+			<h2>Работы требующие проверку</h2>
+			<table id="checkworks"><tr><td/></tr></table> 
+			<div align="right"><button id="btncheckworks">Перейти к контролю работ</button></div>
+			<br />
+			<h2>Новые работы</h2>
+			<div align="right"><button  id="btnplacementworks">Перейти к распределению работ</button></div>
+			<h2>Завершающиеся работы</h2>
+			<table id="endingworks"><tr><td/></tr></table>
+			<div align="right"><button id="btnqualityworks">Перейти к контролю работ</button></div>
+			<h1>Мои работы</h1>
+			<p>Двойной клик на записи открывает страницу работы</p>
+			<table id="myworks"><tr><td/></tr></table>
+			<div id="work-info"></div>
+			<div id="work-info-control"></div>
+		</div>
+		<div class="rightzone">
+			<h1>Сообщения</h1>
+			<div class="messages">
+				<p>Нет новых сообщений</p>
+			</div>
+			<h1>Рабочее время</h1>
+			<div class="worktimer ui-corner-all"></div>
+			<h1>Помощь</h1>
+			<ul>
+				<li><a href="">Использование приложения</a></li>
+				<li><a href="">Выполнение работы</a></li>				
+			</ul>
+		</div>				
+	</div>
+	</div>
+	<div id="tabs-2">
+	<div class="workzone">
+		<div class="leftzone">		
+		<h1>Распределение работ</h1>
+			<button id="btnUnathorizedWorks">Показать неавторизованные работы</button>
+			<button id="btnPlacementShowAll">Показать все работы</button>			
+			<table id="WorksPlacement"><tr><td/></tr></table> 
+			<div id="pager-placement"></div> 
+		<br />
+		<h1>Загрузка сотрудников</h1>
+			Выберите сотрудника: 
+			<span id="EmployeesLoadSelect"></span>
+			<table id="EmployeesLoad"><tr><td/></tr></table>
+			<div id="pager-empload"></div> 			
+			<div id="assign-dialog"></div><div id="reassign-dialog"></div><div id="deny-dialog"></div>
+		</div>
+		<div class="rightzone">
+			<h1>Сообщения</h1>
+			<div class="messages">
+				<p>Нет новых сообщений</p>
+			</div>
+			<h1>Рабочее время</h1>
+			<div class="worktimer ui-corner-all"></div>
+			<h1>Помощь</h1>
+			<ul>
+				<li><a href="">Использование приложения</a></li>
+				<li><a href="">Выполнение работы</a></li>				
+			</ul>
+		</div>
+	</div>			
+	</div>
+	<div id="tabs-3">
+	<div class="workzone">
+		<div class="leftzone">		
+		<h1>Контроль выполнения</h1>
+			<button id="btnEndingWorks">Работы с завершающимся сроком</button>
+			<button id="btnWorksWithoutStatus">Работы без текущего статуса</button>			
+			<table id="WorksControl"><tr><td/></tr></table> 
+			<div id="control-dialog" title="Распределение работ"></div>			
+		</div>
+		<div class="rightzone">
+			<h1>Сообщения</h1>
+			<div class="messages">
+				<p>Нет новых сообщений</p>
+			</div>
+			<h1>Рабочее время</h1>
+			<div class="worktimer ui-corner-all"></div>			
+			<h1>Помощь</h1>
+			<ul>
+				<li><a href="">Использование приложения</a></li>
+				<li><a href="">Выполнение работы</a></li>				
+			</ul>
+		</div>				
+	</div>
+	</div>
+	<div id="tabs-4">
+	<div class="workzone">
+		<div class="leftzone">		
+		<h1>Вознаграждение</h1>
+		<h2>Вознаграждение сотрудников бригады</h2>
+			<table id="EmployeesReward"><tr><td/></tr></table>
+		<br />
+		<h2>Персональное вознаграждение</h2>
+			Выберите период  
+			от <input type="text" id="datepicker3"> до <input type="text" id="datepicker4"><button id="btnFilterReward">Показать</button><button id="btnClearFilterReward">Очистить</button>
+			<table id="PersonalReward"><tr><td/></tr></table>			
+		<h3>Проценты от вознаграждения сотрудников: 
+		<? 
+			$result = mysql_query("select sum(reward) reward from v_reward where id_specialist<>".$spid." and id_brigade=".$brigadeid) or die("Couldn't execute query.".mysql_error()); 
+			$row = mysql_fetch_array($result,MYSQL_ASSOC);
+			$rew_percent = round($row['reward']*20/100,2);
+
+			$result = mysql_query("select sum(reward) reward from v_reward where id_specialist=".$spid) or die("Couldn't execute query.".mysql_error()); 
+			$row = mysql_fetch_array($result,MYSQL_ASSOC);
+			$rew_personal = round($row['reward'],2);	
+			$rew_sum = 	$rew_personal + $rew_percent;	
+			
+			echo ($rew_percent."$");
+		?>
+		</h3>
+		<h3>Текущее суммарное вознаграждение: 
+		<? 
+			echo $rew_sum."$";
+		?>
+		</h3>		
+		</div>
+		<div class="rightzone">
+			<h1>Сообщения</h1>
+			<div class="messages">
+				<p>Нет новых сообщений</p>
+			</div>
+			<h1>Рабочее время</h1>
+			<div class="worktimer ui-corner-all"></div>			
+			<h1>Помощь</h1>
+			<ul>
+				<li><a href="">Использование приложения</a></li>
+				<li><a href="">Выполнение работы</a></li>				
+			</ul>
+		</div>
+	</div>
+	</div>
+
+
+	<div id="tabs-5">
+	<div class="workzone">
+		<div class="leftzone">		
+		<h1>Личные данные</h1>
+		{% for detail in specialist_list %}
+
+			<table class="personal_data">
+				<tr>
+					<td width="200">Имя</td>
+					<td><strong>{{ detail.full_name }}</strong></td>
+				</tr>
+				<tr>
+					<td>Город</td>
+					<td><strong>{{ detail.location }}</strong></td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td><strong>{{ detail.contact_mail }}</strong></td>
+				</tr>
+				<tr>
+					<td>Контактный телефон</td>
+					<td><strong>{{ detail.contact_phone }}</strong></td>
+				</tr>
+				<tr>
+					<td>Skype</td>
+					<td><strong>{{ detail.skype }}</strong></td>					
+				</tr>
+				<tr>
+					<td>Рабочие часы</td>
+					<td><strong>{{ detail.working_hours }}</strong></td>					
+				</tr>
+				<tr>
+					<td>Кол-во рабочих часов в день</td>
+					<td><strong>{{ detail.hours_per_day }}</strong></td>					
+				</tr>
+			</table>
+
+		{% endfor %}
+		</div>
+
+
+		<div class="rightzone">
+			<h1>Сообщения</h1>
+			<div class="messages">
+				<p>Нет новых сообщений</p>
+			</div>
+			<h1>Рабочее время</h1>
+			<div class="worktimer ui-corner-all"></div>			
+			<h1>Помощь</h1>
+			<ul>
+				<li><a href="">Использование приложения</a></li>
+				<li><a href="">Выполнение работы</a></li>				
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+</body>
+</html>

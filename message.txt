@@ -1,0 +1,10 @@
+class Message(models.Model):
+    id = models.IntegerField(primary_key=True)
+    title = models.CharField(db_column='Title', max_length=100, blank=True) # Field name made lowercase.
+    text = models.CharField(db_column='Text', max_length=1000, blank=True) # Field name made lowercase.
+    spec_from = models.ForeignKey('Specialist', db_column='Spec_from', blank=True, null=True) # Field name made lowercase.
+    spec_to = models.ForeignKey('Specialist', db_column='Spec_to', blank=True, null=True) # Field name made lowercase.
+    unread = models.IntegerField(db_column='UnRead', blank=True, null=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'message'

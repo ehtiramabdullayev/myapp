@@ -1,0 +1,57 @@
+
+
+{% extends "base.html" %}
+
+
+
+{% block title %}Welcome to Django{% endblock %}
+{% block head %} 
+
+
+
+
+
+Welcome to Django
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+    <p>Welcome {{ user.username }} !!!</p>
+
+
+<body>
+
+
+
+    <a href="/logout/">Logout</a>
+
+
+
+
+
+
+    <table border="1">
+    <tr><th>Adi</th><th>Telefon</th><th>Yer</th><th>E-Posta</th><th>Register Date</th></tr>
+ 
+    {% for i in specialist %}
+    <tr>
+        <td>{{ i.full_name }}</td>
+        <td>{{ i.contact_phone }}</td>
+        <td>{{ i.location }}</td>
+        <td>{{ i.contact_mail }}</td>
+        <td>{{ i.register_date }}</td>
+    </tr>
+    {% endfor %}
+ 
+</table>
+
+    </body>
+{% endblock %}
+
+
+
+

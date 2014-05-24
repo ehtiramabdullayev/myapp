@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+{% load staticfiles %}
+
+<script src={% static "js/jquery.min.js" %}></script>
+<script src={% static "js/jquery-ui.custom.js" %}></script>
+<link rel="stylesheet" type="text/css" href={% static "css/base.css" %}>
+<link rel="stylesheet" type="text/css" href={% static "css/jquery-ui.custom.css" %}>
+
+
+
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    var div=$("div");
+    div.animate({height:'300px',opacity:'0.4'},"slow");
+    div.animate({width:'300px',opacity:'0.8'},"slow");
+    div.animate({height:'100px',opacity:'0.4'},"slow");
+    div.animate({width:'100px',opacity:'0.8'},"slow");
+  });
+});
+
+
+</script> 
+ <script>
+$(function() {
+$( "#resizable" ).resizable();
+});
+</script>
+
+	<script>
+		$(document).ready(function () {
+			$("#datepicker").datepicker();
+		});
+	</script>
+ <script>
+$(function() {
+$( "#menu" ).menu();
+});
+</script>
+
+<script type="text/javascript">
+      $(function () {
+         $('#dialogMsg').dialog();
+      });
+   </script>
+
+<script>
+$(function() {
+      $('#mytable').dataTable( {
+   });
+});
+</script>
+
+
+         <style>
+         #draggable-2 { 
+           width: 100px; height: 50px; padding: 0.5em; 
+           margin: 0px 5px 10px 0; 	    
+         }
+          #droppable-2,#droppable-3, #droppable-4,#droppable-5 { 
+           width: 120px; height: 90px;padding: 0.5em; float: left; 
+           margin: 10px; 
+         }
+         
+      </style>
+      <script>
+         $(function() {
+            $( "#draggable-2" ).draggable();
+            $( "#droppable-2" ).droppable({
+            drop: function( event, ui ) {
+               $( this )
+               .addClass( "ui-state-highlight" )
+               .find( "p" )
+               .html( "Dropped!" );
+            }
+         });
+         $( "#droppable-3" ).droppable({
+            disabled : "true",
+            drop: function( event, ui ) {
+                $( this )
+               .addClass( "ui-state-highlight" )
+               .find( "p" )
+               .html( "Dropped!" );
+            }
+         });
+         $( "#droppable-4" ).droppable({
+            tolerance: 'touch',
+            drop: function( event, ui ) {
+            $( this )
+               .addClass( "ui-state-highlight" )
+               .find( "p" )
+               .html( "Dropped with a touch!" );
+            }
+         });
+         $( "#droppable-5" ).droppable({
+            tolerance: 'fit',
+            drop: function( event, ui ) {
+             $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "Dropped only when fully fit on the me!" );
+            }
+        });
+      });
+   </script>
+
+</head>
+ 
+<body>
+<button>Start Animation</button>
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div<br/><br/><br/><br/><br/><br/><br/>
+
+<p>Date: <input id="datepicker" type="text"></p>
+
+
+<div id="resizable" class="ui-widget-content">
+<h3 class="ui-widget-header">Resizable </h3>
+<h3 class="ui-widget-body">salam asdasdajsndkjasndjknasjkdnaskjdnasjkdnaskjdnkajsndkjasndkandskjasndkjansdkjasn</h3>
+
+</div>
+
+
+<ul id="menu">
+<li class="ui-state-disabled"><a href="#">Aberdeen</a></li>
+<li><a href="#">Ada</a></li>
+<li><a href="#">Adamsville</a></li>
+<li><a href="#">Addyston</a></li>
+<li>
+<a href="#">Delphi</a>
+<ul>
+<li class="ui-state-disabled"><a href="#">Ada</a></li>
+<li><a href="#">Saarland</a></li>
+<li><a href="#">Salzburg</a></li>
+</ul>
+</li>
+<li><a href="#">Saarland</a></li>
+<li>
+<a href="#">Salzburg</a>
+<ul>
+<li>
+<a href="#">Delphi</a>
+<ul>
+<li><a href="#">Ada</a></li>
+<li><a href="#">Saarland</a></li>
+<li><a href="#">Salzburg</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Delphi</a>
+<ul>
+<li><a href="#">Ada</a></li>
+<li><a href="#">Saarland</a></li>
+<li><a href="#">Salzburg</a></li>
+</ul>
+</li>
+<li><a href="#">Perch</a></li>
+</ul>
+</li>
+<li class="ui-state-disabled"><a href="#">Amesville</a></li>
+</ul>
+
+   <form id="form1" runat="server">
+      <div id="dialogMsg" title="Salam KƏLƏ">
+         Bu mənim birinci Jquery nümunəmdi bırad!111!!
+      </div>
+   </form>
+
+
+
+<div id="container" style="width:800px; margin:0 auto;">
+<table id="mytable" style="margin:20px 0px 20px 0px;">
+<thead>
+<tr><th>One</th><th>Two</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>11</td><td>22</td></tr>
+<tr><td>12</td><td>23</td></tr>
+<tr><td>13</td><td>24</td></tr>
+<tr><td>14</td><td>22</td></tr>
+<tr><td>11</td><td>22</td></tr>
+<tr><td>12</td><td>22</td></tr>
+<tr><td>13</td><td>22</td></tr>
+<tr><td>14</td><td>22</td></tr>
+<tr><td>11</td><td>22</td></tr>
+<tr><td>11</td><td>29</td></tr>
+<tr><td>1</td><td>22</td></tr>
+</tbody>
+</table>
+</div>
+
+
+   <div id="draggable-2" class="ui-widget-content">
+      <p>Drag me to my target</p>
+   </div>
+   <div id="droppable-2" class="ui-widget-header">
+      <p>Drop here</p>
+   </div>
+   <div id="droppable-3" class="ui-widget-header">
+      <p>I'm disabled, you can't drop here!</p>
+   </div>
+   <div id="droppable-4" class="ui-widget-header">
+      <p>Tolerance Touch!</p>
+   </div>
+   <div id="droppable-5" class="ui-widget-header">
+      <p>Tolerance Fit!</p>
+   </div>
+
+
+
+   
+
+</body>
+</html>

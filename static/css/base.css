@@ -1,0 +1,91 @@
+/* Site
+   -------------------------------- */
+
+body {font-size: 62.5%;margin:0;padding:0;
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+}
+
+table {
+	font-size: 1em;
+}
+
+
+/* Layout
+   -------------------------------- */
+
+.layout-grid {
+	width: 960px;
+}
+
+.layout-grid td {
+	vertical-align: top;
+}
+
+.layout-grid td.left-nav {
+	width: 140px;
+}
+
+.layout-grid td.normal {
+	border-left: 1px solid #eee;
+	padding: 20px 24px;
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+}
+
+.layout-grid td.demos {
+	background: url('/images/demos_bg.jpg') no-repeat;
+	height: 337px;
+	overflow: hidden;
+}
+
+/* Normal
+   -------------------------------- */
+
+.normal h3,
+.normal h4 {
+	margin: 0;
+	font-weight: normal;
+}
+
+.normal h3 {
+	padding: 0 0 9px;
+	font-size: 1.8em;
+}
+
+.normal h4 {
+	padding-bottom: 21px;
+	border-bottom: 1px dashed #999;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.normal p {
+	font-size: 1.2em;
+}
+
+#tabs-1,#tabs-2,#tabs-3,#tabs-4,#tabs-5,#tabs-6 {clear:both; padding:5px; min-height:600px;}
+
+#wrapper {width:990px;position:relative;text-align:left;margin:0 auto;border-left:1px solid #E1E8F1;border-right:1px solid #E1E8F1;background:#FFFFFF; clear:both;}
+
+.workzone {float:left; padding:0; width:975px; margin:0 auto}
+.leftzone {float:left; width:650px; margin:0; min-height:400px; background:#FFFFFF; border:1px solid #E6D8BD; padding:10px}
+.rightzone {float:left;width:275px; margin:0 0 0 5px; min-height:400px; background:#FFFFFF; border:1px solid #E6D8BD; padding:10px}
+#workinfo {background:#fff;margin:7px 0; padding:5px}
+.personal_data td{font-size:12px}
+
+#order {background:#fff;margin:7px 0; padding:5px}
+
+img {border:0}
+h1{font-size:23px;font-weight:bold;margin:0 0 5px 0; color:#CC6600}
+h2 {font-size:15px;color:#2B5B7D;font-weight:bold;margin:0 0 5px 0}
+hr {color: #999999;background-color: #999999;height: 1px;border: 0;clear:both; margin:10px 2px;}
+button,input,select {margin:3px; 0}
+a {text-decoration:none; color:#003399}
+a:hover {text-decoration:underline}
+a:visited {color:#666666}
+.rightzone a {font-size:13px}
+.rightzone ul {margin-left:20px; padding-left:0}
+.rightzone li {margin:0}
+.messages {margin-left:10px}
+.worktimer {text-align:center; font-size:30px; height:37px; border:1px solid #E6DCC0}
+select.action {width:90%}
+#order_messages {max-height:400px; overflow:auto}
